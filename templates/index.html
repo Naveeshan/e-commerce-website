@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jewelry E-Commerce</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="header">
+        <div class="logo">AKNAV</div>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Category</a></li>
+                <li><a href="#">Collections</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">Offers</a></li>
+                <li><a href="#">Gift Store</a></li>
+            </ul>
+        </nav>
+        <div class="header-icons">
+            <a href="#"><i class="fas fa-search"></i></a>
+            <a href="#"><i class="fas fa-user"></i></a>
+            <a href="#"><i class="fas fa-shopping-cart"></i></a>
+        </div>
+        
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h4>SAVE UP TO 30%</h4>
+            <h1>Find Your New Heirloom</h1>
+            <p>Certain things are made to be cherished for a lifetime—now’s the time to save on your forever piece.</p>
+            <div class="hero-buttons">
+                <a href="#" class="btn">Shop Now</a>
+                <a href="#" class="btn-secondary">Explore More</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="{{ url_for('static', filename='images/f1.png') }}" alt="Jewelry Collection">
+        </div>
+    </section>
+    <section class="featured-products">
+        <h2>Featured Products</h2>
+        <p>Check out some of our best collections.</p>
+        
+        <div class="product-container">
+            <div class="product-card">
+                
+                <img src="{{ url_for('static', filename='images/f2.png') }}" alt="Earrings">
+                <p class="product-name">Earrings</p>
+                <p class="product-price">$50</p>
+                <button class="add-to-cart">➕ Add to Cart</button>
+                <button class="buy-now">🛒 Buy Now</button>
+            </div>
+    
+            <div class="product-card">
+                <img src="{{ url_for('static', filename='images/f3.png') }}" alt="Finger Rings">
+                <p class="product-name">Finger Rings</p>
+                <p class="product-price">$70</p>
+                <button class="add-to-cart">➕ Add to Cart</button>
+                <button class="buy-now">🛒 Buy Now</button>
+            </div>
+    
+            <div class="product-card">
+                <img src="{{ url_for('static', filename='images/f4.png') }}" alt="Pendants">
+                <p class="product-name">Pendants</p>
+                <p class="product-price">$90</p>
+                <button class="add-to-cart">➕ Add to Cart</button>
+                <button class="buy-now">🛒 Buy Now</button>
+            </div>
+    
+            <div class="product-card">
+                <img src="{{ url_for('static', filename='images/f5.png') }}" alt="Bracelets">
+                <p class="product-name">Bracelets</p>
+                <p class="product-price">$60</p>
+                <button class="add-to-cart">➕ Add to Cart</button>
+                <button class="buy-now">🛒 Buy Now</button>
+            </div>
+        </div>
+    </section>
+    
+    <section class="add-product">
+        <h2>Add New Product</h2>
+        <form id="addProductForm" class="product-form">
+            <div class="form-group">
+                <label for="productName">Product Name</label>
+                <input type="text" id="productName" placeholder="Enter product name" required>
+            </div>
+            <div class="form-group">
+                <label for="productPrice">Product Price ($)</label>
+                <input type="number" id="productPrice" placeholder="Enter product price" required>
+            </div>
+            <div class="form-group">
+                <label for="productImage">Product Image URL</label>
+                <input type="text" id="productImage" placeholder="Enter image URL" required>
+            </div>
+            <button type="submit" class="submit-btn">Add Product</button>
+        </form>
+    </section>
+    <section class="why-choose-us">
+        <h2>Why Choose Us?</h2>
+        <p>We bring you premium quality, unbeatable prices, and excellent customer service.</p>
+    
+        <div class="features">
+            <div class="feature">
+                <i class="fas fa-gem"></i>
+                <h3>Premium Quality</h3>
+                <p>Handpicked jewelry crafted with the finest materials.</p>
+            </div>
+        
+            <div class="feature">
+                <i class="fas fa-shipping-fast"></i>
+                <h3>Fast & Free Shipping</h3>
+                <p>Enjoy quick delivery at no extra cost.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Secure Payments</h3>
+                <p>100% safe and secure checkout with multiple payment options.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-headset"></i>
+                <h3>24/7 Support</h3>
+                <p>Our team is available anytime for assistance.</p>
+            </div>
+        </div>
+    </section>
+    <section class="cart-section">
+        <h2>Your Cart</h2>
+        <div id="cart-container" class="cart-container">
+            <p class="empty-cart-message">Your cart is empty.</p>
+            <div class="cart-items">
+                <!-- Dynamic cart items will go here -->
+            </div>
+        </div>
+    </section>
+    
+    
+
+    <section class="testimonials">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonial-container">
+            <div class="testimonial">
+                <p>⭐ "This platform helped me upgrade my coding gear!"</p>
+                <h4>- John D.</h4>
+            </div>
+            <div class="testimonial">
+                <p>⭐ "The best place to buy premium collections!"</p>
+                <h4>- Sarah K.</h4>
+            </div>
+        </div>
+    </section>
+    <section class="newsletter">
+        <h2>Get Exclusive Developer Deals!</h2>
+        <p>Subscribe to get the latest discounts and updates straight to your inbox.</p>
+        <form class="newsletter-form">
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe Now</button>
+        </form>
+    </section>
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+            <a href="#">FAQs</a>
+            <a href="#">Terms & Privacy</a>
+        </div>
+        <div class="footer-contact">
+            <p>📧 Email: support@Aknav.com</p>
+            <p>📞 Phone: +1 (234) 567-890</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <p class="copyright">© 2025 Aknav. All rights reserved.</p>
+    </footer>
+    
+    
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+
+    
+</body>
+</html>
